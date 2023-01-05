@@ -1,0 +1,18 @@
+header {
+  position: relative;
+}
+
+.header-title {
+  display: inline-block;
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  color: #EAEAEA;
+}
+
+header span {
+  position: absolute;
+  top: 20px;
+  left: calc(60% + 50px);
+  font-size: 25px;
+}
