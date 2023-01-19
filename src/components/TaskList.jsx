@@ -1,18 +1,25 @@
 import TaskCard from "./TaskCard";
+import "../styles/TaskList.css";
 
-import '../styles/TaskList.css'
-
-function TaskList({ tasks, completeTask }) {
-  if (tasks.length === 0) {
+function TaskList({ tasks, setTasks }) {
+  if (!tasks.length) {
     return <h1>No hay tareas</h1>;
   }
 
+  const completeTask = (id) => {
+    let data = tasks.filter((task) => task.id !== id);
+    setTasks(data);
+    localStorage.setItem('tasks', JSON.stringify(data))
+    console.log(data)
+  };
+
   return (
     <div className="main-cards-container">
-      {tasks.map((task, index) => (
+      {tasks.length && tasks.map((task) => (
         <TaskCard
-          task={task}
-          index={index}
+          title={task.title}
+          description={task.description}
+          id={task.id}
           key={task.id}
           completeTask={completeTask}
         />

@@ -1,16 +1,16 @@
 import '../styles/TaskCard.css'
 
-const TaskCard = ({ task, index, completeTask }) => {
+const TaskCard = ({ title, description, id, completeTask }) => {
 
   const handleClick = () => {
-    completeTask(index)
+    completeTask(id)
   }
 
   return (
     <div className='card-container'>
       <div className='card-info'>
-        <h1>{task.title}</h1>
-        <p>{task.description}</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </div>
       <button onClick={handleClick}>Completed</button>
     </div>

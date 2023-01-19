@@ -55,3 +55,7 @@
   background-color: #2dd8d2;
   cursor: pointer;
 }
+
+.required {
+  border: 2px solid red;
+}
