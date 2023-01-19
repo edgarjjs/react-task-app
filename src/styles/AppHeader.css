@@ -1,18 +1,21 @@
 header {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
 .header-title {
   display: inline-block;
-  font-size: 25px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 50px;
+  font-family: 'Fredoka One', cursive;
+  color: #fff;
+  font-weight: 300;
   text-align: center;
-  color: #EAEAEA;
 }
 
-header span {
-  position: absolute;
-  top: 20px;
-  left: calc(60% + 50px);
-  font-size: 25px;
+.app-logo {
+  width: 35px;
+  padding-left: 10px;
 }

@@ -1,13 +1,38 @@
 .main-cards-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  grid-template-columns: repeat(auto-fit, 127px);
+  row-gap: 5px;
   margin-top: 15px;
 }
 
-h1 {
+.list-empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.list-empty-title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: lightgray;
+  font-weight: 100;
   font-size: 25px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: antiquewhite;
+  text-align: center;
+}
+
+.list-empty-image {
+  border-radius: 80px;
+  width: 250px;
+  opacity: 70%;
+}
+
+@media (min-width: 375px) {
+  .main-cards-container {
+    grid-template-columns: repeat(auto-fit, min(234px));
+  }
 }

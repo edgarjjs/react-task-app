@@ -1,4 +1,16 @@
+.modal-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.75);
+  z-index: 99;
+}
+
 .form-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,12 +24,11 @@
 }
 
 .form-input-title {
-  width: 200px;
-  height: 20px;
+  width: 190px;
   border-radius: 5px;
-  border: 2px solid #209491;
+  border: 2px solid #1498f7;
   margin-top: 15px;
-  padding: 5px;
+  padding: 7px;
 }
 
 .form-input-title::placeholder {
@@ -31,16 +42,22 @@
 }
 
 .form-input-description {
-  width: 210px;
+  width: 220px;
   height: 70px;
   border-radius: 8px;
   padding: 12px;
-  border: 2px solid #209491;
+  border: 2px solid #027ed6;
   resize: none;
 }
 
-.form-button {
-  background-color: #209491;
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: #027ed6;
   color: #f3efe0;
   font-size: 15px;
   font-weight: bold;
@@ -51,11 +68,21 @@
   padding: 5px;
 }
 
-.form-button:hover {
-  background-color: #2dd8d2;
+.button:hover {
   cursor: pointer;
 }
 
-.required {
-  border: 2px solid red;
+.close {
+  background-color: rgb(145, 0, 0);
+}
+.close:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+.submit {
+  background-color: rgb(0, 83, 0);
+}
+
+.submit:hover {
+  background-color: rgb(0, 170, 0);
 }

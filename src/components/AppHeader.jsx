@@ -1,13 +1,11 @@
 import "../styles/AppHeader.css";
-import { FcTodoList } from "react-icons/fc";
+import appLogo from '../assets/app-logo.png'
 
 const AppHeader = () => {
   return (
     <header>
       <h1 className="header-title">TaskApp</h1>
-      <span>
-        <FcTodoList />
-      </span>
+      <img src={appLogo} alt='app-icon' className="app-logo" />
     </header>
   );
 };

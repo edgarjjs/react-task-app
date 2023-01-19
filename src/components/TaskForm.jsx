@@ -1,7 +1,6 @@
 import "../styles/TaskForm.css";
 
-const TaskForm = ({ tasks, setTasks }) => {
-
+const TaskForm = ({ tasks, setTasks, handleModalClick }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -13,33 +12,49 @@ const TaskForm = ({ tasks, setTasks }) => {
 
     if (!tasks.length) {
       setTasks([newTask]);
-      localStorage.setItem('tasks', JSON.stringify([newTask]))
+      localStorage.setItem("tasks", JSON.stringify([newTask]));
     } else {
       setTasks([...tasks, newTask]);
-      localStorage.setItem('tasks', JSON.stringify([...tasks, newTask]))
+      localStorage.setItem("tasks", JSON.stringify([...tasks, newTask]));
     }
 
     e.target.description.value = "";
     e.target.title.value = "";
+
+    handleModalClick()
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <input
-        name="title"
-        className="form-input-title"
-        type="text"
-        placeholder="Titulo de la tarea"
-        required={true}
-      />
-      <textarea
-        name="description"
-        className="form-input-description"
-        placeholder="Descripción de la tarea"
-        required={true}
-      />
-      <button className="form-button">Guardar</button>
-    </form>
+    <div className="modal-container">
+      <form className="form-container" onSubmit={handleSubmit}>
+        <input
+          name="title"
+          className="form-input-title"
+          type="text"
+          placeholder="Titulo de la tarea"
+          required={true}
+        />
+        <textarea
+          name="description"
+          className="form-input-description"
+          placeholder="Descripción de la tarea"
+          required={true}
+        />
+
+        <div className="buttons-container">
+          <button
+            type="button"
+            className="button close"
+            onClick={handleModalClick}
+          >
+            Cancelar
+          </button>
+          <button className="button submit" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
